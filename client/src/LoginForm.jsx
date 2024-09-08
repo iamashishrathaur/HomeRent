@@ -1,8 +1,13 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Captcha from "./client/components/Captcha";
 
 const LoginForm = () => {
   const navigate = useNavigate();
+  const handleCaptchaAnswer = (answer) => {
+    // setCaptchaAnswer(answer);
+    console.log('Received CAPTCHA answer:', answer);
+  };
   return (
     // <div className="relative w-full h-screen bg-white flex items-center justify-center overflow-hidden">
     //   <div className="absolute w-[280px] h-[400px]">
@@ -42,7 +47,7 @@ const LoginForm = () => {
         <div className="p-5 w-full">
         <h3 className="text-center text-black text-[38px] font-bold leading-[42px] drop-shadow">Login</h3>
          <label htmlFor="username" className="block mt-[30px] text-black text-[16px] font-medium">
-         Mobile Number
+           Mobile Number
          </label>
          <input
           type="text"
@@ -58,6 +63,12 @@ const LoginForm = () => {
           placeholder="Password"
           id="password"
           className="block w-full h-[50px] bg-white bg-opacity-10 rounded-[3px] border-2 border-[black] p-[0_10px] mt-[8px] outline-none text-[14px] font-light text-black placeholder-gray-500"
+        />
+        <Captcha onCaptchaAnswer={handleCaptchaAnswer}/>
+        <input
+          type="text"
+          placeholder="Enter the answer"
+          className="block w-full h-[50px] bg-white bg-opacity-10 rounded-[3px] border-2 border-[black] p-[0_10px] mt-[10px] outline-none text-[14px] font-light text-black placeholder-gray-500"
         />
          <button className="w-full mt-[50px] bg-[#0652AD] border shadow-lg text-white py-[15px] text-[18px] font-semibold rounded-[5px] hover:bg-[#054ba1] transition-all" onClick={()=>navigate('/')}>
           Log In
