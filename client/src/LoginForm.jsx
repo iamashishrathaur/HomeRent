@@ -2,7 +2,7 @@ import React from "react";
 
 const LoginForm = () => {
   return (
-    <div className="relative w-full h-screen bg-white flex items-center justify-center">
+    <div className="relative w-full h-screen bg-white flex items-center justify-center overflow-hidden">
       <div className="absolute w-[280px] h-[400px]">
         <div className="absolute h-[200px] w-[200px] rounded-full bg-gradient-to-r from-[#1845ad] to-[#23a2f6] -top-[80px] -left-[80px]"></div>
         <div className="absolute h-[200px] w-[200px] rounded-full bg-gradient-to-r from-[#ff512f] to-[#f09819] -bottom-[80px] -right-[80px]"></div>
