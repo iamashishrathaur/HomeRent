@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base{
+  *{
+    overflow: -moz-scrollbars-none; 
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+  }
+  body{
+    width: 480px;
+    margin: auto;
+    overflow: auto;
+    overflow-x: hidden;
+    -webkit-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
+    font-family:'Poppins',sans-serif;
+  }
+
+  @media (max-width: 768px){
+    body {
+      width: 100%;
+    }
+  
+  }
+  @media (max-width: 370px){
+    body {
+      width: 370px;
+    }
+  
+  }
+  
+}
+
+::-webkit-scrollbar{
+  width: 0;
+}
