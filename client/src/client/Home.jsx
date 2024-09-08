@@ -55,16 +55,16 @@ const Home = () => {
         </div>
       </div>
       <div className='w-full flex flex-col min-h-screen p-5'>
-        {item.map((item, index) => (
-          <PaymentCard
+      {item && item.length > 0 ? item.map((item, index) => (
+            <PaymentCard
             key={index}
             amount={item.amount}
             date={item.date}
             isPaid={item.isPaid}
             rentType={item.rentType}
             transactionId={item.transactionId}
-          />
-        ))}
+            />
+        )) : <span className='flex justify-center' key={0}>Not Found</span>}
       </div>
     </div>
   )

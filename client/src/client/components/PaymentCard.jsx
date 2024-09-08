@@ -4,7 +4,7 @@ import paymentLogo from '../assets/check_mark.png'
 const PaymentCard = ({ rentType, date, amount, transactionId, isPaid }) => {
   return (
     <div className='w-full bg-white flex flex-col shadow-md min-h-10 rounded p-[10px_15px] my-1 relative border'>
-      <div className='flex font-medium pb-1 text-blue-600 items-center justify-between'>
+      <div className='flex font-medium pb-1 text-black items-center justify-between'>
         <p>{rentType}</p>
         <div className='flex-1 flex justify-end items-center text-sm font-semibold me-4'>
           <span className={isPaid ? 'text-red-600' : 'text-green-600'}>
@@ -14,14 +14,15 @@ const PaymentCard = ({ rentType, date, amount, transactionId, isPaid }) => {
       </div>
       
       <div className='flex gap-1'>
-        <span className='w-full flex-1 font-medium text-sm flex items-center justify-start'>
+        <span className='w-full flex-1 font-medium text-sm text-gray-600 flex items-center justify-start'>
           Transaction ID
         </span>
-        <div className='flex-1 font-medium text-xs text-gray-600 flex gap-1 items-center justify-center'>
+        <div className='flex-1 absolute bottom-5 font-medium text-xs text-gray-600 flex flex-col items-center justify-center left-1/2 transform -translate-x-1/2'>
           <span>{date}</span>
           <strong>to</strong>
           <span>{date}</span>
         </div>
+
         <div className='flex-1 flex justify-end items-center'>
           <div className='absolute bottom-[10px] right-[20px]'>
             {isPaid ? (
@@ -31,7 +32,7 @@ const PaymentCard = ({ rentType, date, amount, transactionId, isPaid }) => {
                 alt='Payment successful'
               />
             ) : (
-              <button className='bg-[#0652AD] rounded-full px-[15px] py-[1px] text-white font-normal text-sm shadow-sm'>
+              <button className='bg-[#0652AD] rounded-full px-[20px] py-[2px] text-white font-normal text-sm shadow-sm'>
                 Pay
               </button>
             )}
