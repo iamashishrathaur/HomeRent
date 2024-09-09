@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
-import Home from './client/Home'
+import ClientHome from './client/Home'
+import AdminHome from './admin/Home'
 import LoginForm from './LoginForm'
  import { RouterProvider ,createBrowserRouter }  from 'react-router-dom'
 
@@ -11,8 +12,12 @@ function App() {
     path:'/login'
   },
   {
-    element:<Home/>,
+    element:<ClientHome/>,
     path:'/'
+  },
+  {
+    element:<AdminHome/>,
+    path:'/admin'
   }
    ])
 

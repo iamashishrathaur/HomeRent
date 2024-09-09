@@ -45,7 +45,7 @@ const Home = () => {
     .reduce((total, currentItem) => total + currentItem.amount, 0)
 
   return (
-    <div>
+    <div className='w-full min-h-screen'>
       <div className='w-full bg-[#0652AD] shadow-md sticky top-0 z-50'>
         <div className='p-5'>
           <span className='text-white'>Ashish (7905321205)</span>
@@ -54,7 +54,7 @@ const Home = () => {
           <DashBoard alReadyPay={alReadyPay} deuRent={deuRent} />
         </div>
       </div>
-      <div className='w-full flex flex-col min-h-screen p-5'>
+      <div className='w-full flex flex-col p-5'>
       {item && item.length > 0 ? item.map((item, index) => (
             <PaymentCard
             key={index}
