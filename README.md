@@ -1,7 +1,3 @@
-Certainly! Here’s a comprehensive `README.md` file for a Room Rent Management application. This README provides an overview of the application, installation instructions, usage details, and other essential information.
-
----
-
 # Room Rent Management System
 
 ## Overview
