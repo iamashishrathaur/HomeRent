@@ -102,6 +102,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 For any questions or feedback, please contact [ashishrathaur3523@gmail.com](mailto:ashishrathaur3523@gmail.com).
 
----
-
-Feel free to modify this `README.md` file to better fit your project specifics or to include additional details as needed.
