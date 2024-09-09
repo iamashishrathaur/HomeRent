@@ -23,7 +23,7 @@ To set up the Room Rent Management System locally, follow these steps:
 
 2. **Navigate to the Project Directory**:
    ```sh
-   cd room-rent-management
+   cd HomeRent
    ```
 
 3. **Install Dependencies**:
