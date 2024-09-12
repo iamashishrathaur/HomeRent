@@ -4,6 +4,7 @@ import ClientHome from './client/Home'
 import AdminHome from './admin/Home'
 import LoginForm from './LoginForm'
  import { RouterProvider ,createBrowserRouter }  from 'react-router-dom'
+import AddCustomer from './admin/AddCustomer'
 
 function App() {
 
@@ -18,6 +19,10 @@ function App() {
   {
     element:<AdminHome/>,
     path:'/admin'
+  },
+  {
+    element:<AddCustomer/>,
+    path:'/add'
   }
    ])
 

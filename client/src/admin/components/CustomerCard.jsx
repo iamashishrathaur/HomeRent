@@ -56,7 +56,7 @@ const CustomerCard = ({ name = 'Unknown', phone = 'N/A', amount = '00' }) => {
           </div>
         </div>
         <div className='w-[60%] flex flex-col'>
-             <p className='font-medium  text-base'>{name}</p>
+             <p className='font-medium text-base'>{name}</p>
              <small className='text-gray-500'>{phone}</small>
         </div>
         <div className='w-[23.333%] flex flex-col items-end'>
