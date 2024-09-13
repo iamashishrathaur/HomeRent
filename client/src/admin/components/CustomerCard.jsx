@@ -2,11 +2,11 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const CustomerCard = ({ name, phone, amount}) => {
+const CustomerCard = ({ name, phone, amount, status }) => {
   const navigate = useNavigate();
 
   const firstLetter = name && name.split(' ')[0].charAt(0).toUpperCase();
-  
+
   const colorMap = {
     A: '#FF5733', B: '#33FF57', C: '#3357FF', D: '#F33F57', E: '#F3F557',
     F: '#57F3F3', G: '#F357F3', H: '#57F357', I: '#5733F3', J: '#F3A733',
@@ -19,44 +19,53 @@ const CustomerCard = ({ name, phone, amount}) => {
   const bgColor = colorMap[firstLetter] || colorMap.default;
 
   const handleClick = () => {
-    navigate('/details', { state: { name, phone, amount } });
+    navigate('/details', { state: { name, phone, amount, status } });
   };
 
   return (
     <div 
-      className='w-full bg-white flex shadow-md min-h-10 rounded p-[10px_15px] my-[5px] relative border cursor-pointer transition-all duration-300 hover:shadow-xl hover:scale-[1.01] ' 
+      className='w-full bg-white flex shadow-md min-h-10 rounded-lg p-4 my-2 relative border cursor-pointer transition-all duration-300 hover:shadow-lg hover:scale-105' 
       onClick={handleClick}
     >
-        <div className='w-1/6'> 
-          <div 
-            className='rounded-full h-11 w-11 flex justify-center items-center text-white font-bold text-base'
-            style={{ backgroundColor: bgColor }}
-          >
-            {firstLetter}
-          </div>
+      {/* Avatar */}
+      <div className='w-1/6 flex justify-center items-center'>
+        <div 
+          className='rounded-full h-12 w-12 flex justify-center items-center text-white font-bold text-lg'
+          style={{ backgroundColor: bgColor }}
+        >
+          {firstLetter}
         </div>
-        <div className='w-[60%] flex flex-col'>
-             <p className='font-medium text-base'>{name}</p>
-             <small className='text-gray-500'>{phone}</small>
-        </div>
-        <div className='w-[23.333%] flex flex-col items-end'>
-           <p className='font-bold text-base text-green-600'>₹ {amount}</p>
-           <small className='text-gray-400'>Pending</small>
-        </div>
+      </div>
+
+      {/* Name and Phone */}
+      <div className='flex-1 flex flex-col justify-center pl-3'>
+        <p className='font-semibold text-lg text-gray-800'>{name}</p>
+        <small className='text-gray-500'>{phone}</small>
+      </div>
+
+      {/* Amount and Status */}
+      <div className='flex flex-col justify-center items-end'>
+        <p className='font-bold text-lg text-green-600'>₹ {amount}</p>
+        <small className={`text-xs font-medium ${status === 'Paid' ? 'text-green-500' : status === 'Overdue' ? 'text-red-500' : 'text-gray-400'}`}>
+          {status}
+        </small>
+      </div>
     </div>
   );
 };
 
 CustomerCard.propTypes = {
-  name: PropTypes.string,
-  phone: PropTypes.string,
-  amount: PropTypes.string
+  name: PropTypes.string.isRequired,
+  phone: PropTypes.string.isRequired,
+  amount: PropTypes.string.isRequired,
+  status: PropTypes.string.isRequired, // Added dynamic status
 };
 
 CustomerCard.defaultProps = {
   name: 'Unknown',
   phone: 'N/A',
-  amount: '00'
+  amount: '00',
+  status: 'Pending' // Default to "Pending"
 };
 
 export default CustomerCard;

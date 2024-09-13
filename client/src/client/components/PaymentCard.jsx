@@ -1,52 +1,46 @@
-import React from 'react'
-import paymentLogo from '../assets/check_mark.png'
+import React from 'react';
+import paymentLogo from '../assets/check_mark.png';
 
-const PaymentCard = ({ rentType, date, amount, transactionId, isPaid }) => {
+const PaymentCard = ({ rentType, date, endDate, amount, transactionId, isPaid }) => {
   return (
-    <div className='w-full bg-white flex flex-col shadow-md min-h-10 rounded p-[10px_15px] my-1 relative border'>
-      <div className='flex font-medium pb-1 text-black items-center justify-between'>
-        <p>{rentType}</p>
-        <div className='flex-1 flex justify-end items-center text-sm font-semibold me-4'>
-          <span className={isPaid ? 'text-red-600' : 'text-green-600'}>
+    <div className='w-full bg-white flex flex-col shadow-md min-h-10 rounded-lg p-4 my-2 relative border transition-all hover:shadow-lg hover:scale-[1.01]'>
+      <div className='flex font-medium pb-2 text-black items-center justify-between'>
+        {/* Rent Type */}
+        <p className='text-lg font-semibold'>{rentType}</p>
+        <div className='flex justify-end items-center text-lg font-bold'>
+          <span className={isPaid ? 'text-green-600' : 'text-red-600'}>
             ₹ {amount}
           </span>
         </div>
       </div>
-      
-      <div className='flex gap-1'>
-        <span className='w-full flex-1 font-medium text-sm text-gray-600 flex items-center justify-start'>
-          Transaction ID
-        </span>
-        <div className='flex-1 absolute bottom-5 font-medium text-xs text-gray-600 flex flex-col items-center justify-center left-1/2 transform -translate-x-1/2'>
-          <span>{date}</span>
-          <strong>to</strong>
-          <span>{date}</span>
-        </div>
 
-        <div className='flex-1 flex justify-end items-center'>
-          <div className='absolute bottom-[10px] right-[20px]'>
-            {isPaid ? (
-              <img
-                src={paymentLogo}
-                className='w-9 h-9 me-2'
-                alt='Payment successful'
-              />
-            ) : (
-              <button className='bg-[#0652AD] rounded-full px-[20px] py-[2px] text-white font-normal text-sm shadow-sm'>
-                Pay
-              </button>
-            )}
-          </div>
+      {/* Transaction and Date Details */}
+      <div className='flex items-center justify-between text-sm text-gray-600 mt-1'>
+        <span className='font-medium'>Transaction ID: {transactionId}</span>
+        <div className='flex flex-col items-center'>
+          {/* Check if endDate is provided, and display date range */}
+          <span className='font-medium'>
+            {date} {endDate && <strong>to</strong>} {endDate}
+          </span>
         </div>
       </div>
 
-      <div className='flex'>
-        <small className='flex items-center font-normal text-xs text-gray-600'>
-          {transactionId}
-        </small>
+      {/* Payment Button or Logo */}
+      <div className='flex justify-end items-center mt-3'>
+        {isPaid ? (
+          <img
+            src={paymentLogo}
+            className='w-8 h-8'
+            alt='Payment successful'
+          />
+        ) : (
+          <button className='bg-[#0652AD] hover:bg-[#084a9a] hover:scale-[1.03] transition-all rounded-full px-4 py-2 text-white font-semibold text-sm shadow-md'>
+            Pay
+          </button>
+        )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default PaymentCard
+export default PaymentCard;
