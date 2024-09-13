@@ -29,7 +29,7 @@ const Home = () => {
       <CustomerCard name="Charlie Brown" phone="9823492349" amount="300" status="Paid" />
       </div>
 
-      <button className='fixed bottom-5 right-5 bg-[#9B224B] text-white px-5 py-[10px] rounded-full text-sm shadow-md flex gap-2 justify-center items-center' onClick={()=>setIsOpen(true)}><FaUserPlus/> ADD CUSTOMERS</button>
+      <button className='fixed bottom-5 right-5 bg-[#9B224B] hover:bg-[#be285a] text-white px-5 py-[10px] rounded-full text-sm shadow-md flex gap-2 justify-center items-center' onClick={()=>setIsOpen(true)}><FaUserPlus/> ADD CUSTOMERS</button>
       <AddCustomer show={isOpen} onClose={closeModal}/>
     </div>
   )

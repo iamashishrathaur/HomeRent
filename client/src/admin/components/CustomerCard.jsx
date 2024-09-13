@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const CustomerCard = ({ name = 'Unknown', phone = 'N/A', amount = '00' }) => {
+const CustomerCard = ({ name, phone, amount}) => {
   const navigate = useNavigate();
 
   const firstLetter = name && name.split(' ')[0].charAt(0).toUpperCase();
@@ -24,7 +24,7 @@ const CustomerCard = ({ name = 'Unknown', phone = 'N/A', amount = '00' }) => {
 
   return (
     <div 
-      className='w-full bg-white flex shadow-md min-h-10 rounded p-[10px_15px] my-[5px] relative border cursor-pointer' 
+      className='w-full bg-white flex shadow-md min-h-10 rounded p-[10px_15px] my-[5px] relative border cursor-pointer transition-all duration-300 hover:shadow-xl hover:scale-[1.01] ' 
       onClick={handleClick}
     >
         <div className='w-1/6'> 

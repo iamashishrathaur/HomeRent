@@ -20,8 +20,8 @@ const CustomerDetails = () => {
       </div>
 
       <div className='fixed w-full bottom-0 flex justify-between p-5 z-50'>
-           <button className='bg-[#616161] text-white px-5 py-[10px] rounded-full text-sm shadow-md flex gap-2 justify-center items-center' onClick={()=>{}}><SiAdblock />Block User</button>
-           <button className='bg-[#9B224B] text-white px-5 py-[10px] rounded-full text-sm shadow-md flex gap-2 justify-center items-center' onClick={()=>{}}><MdAssignmentAdd />Add Rent</button>
+           <button className='bg-gray-500 hover:bg-slate-600 text-white px-5 py-[10px] rounded-full text-sm shadow-md flex gap-2 justify-center items-center' onClick={()=>{}}><SiAdblock />Block User</button>
+           <button className='bg-[#9B224B] hover:bg-[#be285a] text-white px-5 py-[10px] rounded-full text-sm shadow-md flex gap-2 justify-center items-center' onClick={()=>{}}><MdAssignmentAdd />Add Rent</button>
       </div>
     </div>
   )
