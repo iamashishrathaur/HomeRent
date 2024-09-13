@@ -24,7 +24,7 @@ const Home = () => {
       {/* Header */}
       <div className='w-full bg-[#0652AD] shadow-md sticky top-0 z-50'>
         <div className='p-5'>
-          <span className='text-white'>Ashish (7905321205)</span>
+          <span className='text-white text-lg font-bold'>Ashish (7905321205)</span>
         </div>
         <div className='w-full p-5'>
           <DashBoard alReadyPay={alReadyPay} deuRent={deuRent} />
