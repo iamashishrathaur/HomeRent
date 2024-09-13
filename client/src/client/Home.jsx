@@ -4,7 +4,7 @@ import DashBoard from './components/DashBoard';
 
 const Home = () => {
   const item = [
-    { amount: 2300, isPaid: false, date: '1/2/2025' , rentType: 'Room Rent', transactionId: '338021113' },
+    { amount: 2300, isPaid: false, date: '1/2/2025' , rentType: 'Room Rent', transactionId: '338021113455665' },
     { amount: 200, isPaid: false, date: '1/2/2025', rentType: 'Light Bill', transactionId: '338021113' },
     { amount: 2300, isPaid: true, date: '1/2/2025', rentType: 'Room Rent', transactionId: '338021113' },
     { amount: 230, isPaid: false, date: '1/2/2025', rentType: 'Light Bill', transactionId: '338021113' }
