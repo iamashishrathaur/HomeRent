@@ -24,7 +24,7 @@ const Home = () => {
 
       <div className='p-5'> 
 
-      <CustomerCard name="Ashish Kumar" phone="9123456789" amount="5000" status="Paid" />
+      <CustomerCard name="Ashish Kumar" phone="9123456789" amount="5000" status="Paid"/>
       <CustomerCard name="Rahul Sharma" phone="9984493912" amount="200" status="Pending" />
       <CustomerCard name="Charlie Brown" phone="9823492349" amount="300" status="Paid" />
       </div>

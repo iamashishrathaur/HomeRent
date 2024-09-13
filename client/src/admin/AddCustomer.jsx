@@ -30,9 +30,9 @@ const AddCustomer = ({ show, onClose }) => {
         ${show ? 'opacity-100' : 'opacity-0'} ${show ? 'h-auto' : 'min-h-0'}
         transition-all duration-700 ease-in-out overflow-hidden`}
     >
-      <div className={`p-5 bg-white shadow-lg w-full rounded-[0px_0px_10px_10px] relative`}
+      <div className={`p-5 bg-white shadow-lg w-full rounded-[0px_0px_10px_10px] border-b border-blue-100 relative`}
       >
-        <CgClose color='#9B224B' size={'25px'} className='mr-5 cursor-pointer absolute right-3 top-2' onClick={onClose} />
+        <CgClose color='#9B224B' size={'25px'} className='mr-5 cursor-pointer absolute right-[10px] top-[10px]' onClick={onClose} />
         <h3 className="text-center mt-5 text-black text-[30px] font-bold leading-[42px] drop-shadow">Add Member</h3>
 
         <label htmlFor="username" className="block mt-[30px] text-black text-[16px] font-medium">

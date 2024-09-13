@@ -1,57 +1,37 @@
 import React from 'react';
-
-// Function to get a color based on the first letter of the name
-const getColorForLetter = (letter) => {
-  // Define a color mapping for each letter
-  const colorMap = {
-    A: '#FF5733',  // Orange
-    B: '#33FF57',  // Green
-    C: '#3357FF',  // Blue
-    D: '#F33F57',  // Pink
-    E: '#F3F557',  // Yellow
-    F: '#57F3F3',  // Teal
-    G: '#F357F3',  // Purple
-    H: '#57F357',  // Light Green
-    I: '#5733F3',  // Indigo
-    J: '#F3A733',  // Coral
-    K: '#33A7F3',  // Sky Blue
-    L: '#F3F357',  // Light Yellow
-    M: '#57F357',  // Lime
-    N: '#A733F3',  // Violet
-    O: '#F35733',  // Salmon
-    P: '#33F3B0',  // Aqua
-    Q: '#F3B833',  // Gold
-    R: '#F33357',  // Red
-    S: '#33F3F3',  // Cyan
-    T: '#F3F3A7',  // Light Olive
-    U: '#A7F3F3',  // Pale Cyan
-    V: '#F3A7A7',  // Light Pink
-    W: '#A7F3A7',  // Mint Green
-    X: '#F3A733',  // Orange
-    Y: '#F3F3A7',  // Light Yellow
-    Z: '#A733F3',  // Dark Purple
-    default: '#0652AD'  // Default blue color
-  };
-  
-  // Return color for the letter or default color
-  return colorMap[letter] || colorMap.default;
-};
+import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const CustomerCard = ({ name = 'Unknown', phone = 'N/A', amount = '00' }) => {
-  // Get the first letter of the first name
+  const navigate = useNavigate();
+
   const firstLetter = name && name.split(' ')[0].charAt(0).toUpperCase();
   
-  // Get color based on the first letter
-  const bgColor = getColorForLetter(firstLetter);
+  const colorMap = {
+    A: '#FF5733', B: '#33FF57', C: '#3357FF', D: '#F33F57', E: '#F3F557',
+    F: '#57F3F3', G: '#F357F3', H: '#57F357', I: '#5733F3', J: '#F3A733',
+    K: '#33A7F3', L: '#F3F357', M: '#57F357', N: '#A733F3', O: '#F35733',
+    P: '#33F3B0', Q: '#F3B833', R: '#F33357', S: '#33F3F3', T: '#F3F3A7',
+    U: '#A7F3F3', V: '#F3A7A7', W: '#A7F3A7', X: '#F3A733', Y: '#F3F3A7',
+    Z: '#A733F3', default: '#0652AD'
+  };
+
+  const bgColor = colorMap[firstLetter] || colorMap.default;
+
+  const handleClick = () => {
+    navigate('/details', { state: { name, phone, amount } });
+  };
 
   return (
-    <div className='w-full bg-white flex shadow-md min-h-10 rounded p-[10px_15px] my-[5px] relative border'>
+    <div 
+      className='w-full bg-white flex shadow-md min-h-10 rounded p-[10px_15px] my-[5px] relative border cursor-pointer' 
+      onClick={handleClick}
+    >
         <div className='w-1/6'> 
           <div 
             className='rounded-full h-11 w-11 flex justify-center items-center text-white font-bold text-base'
             style={{ backgroundColor: bgColor }}
           >
-            {/* Display the first letter of the first name */}
             {firstLetter}
           </div>
         </div>
@@ -65,6 +45,18 @@ const CustomerCard = ({ name = 'Unknown', phone = 'N/A', amount = '00' }) => {
         </div>
     </div>
   );
+};
+
+CustomerCard.propTypes = {
+  name: PropTypes.string,
+  phone: PropTypes.string,
+  amount: PropTypes.string
+};
+
+CustomerCard.defaultProps = {
+  name: 'Unknown',
+  phone: 'N/A',
+  amount: '00'
 };
 
 export default CustomerCard;
