@@ -18,7 +18,7 @@ const PaymentCard = ({ rentType, date, endDate, amount, transactionId, isPaid, p
 
       {/* Transaction and Date Details */}
       <div className='flex items-center justify-between text-sm text-gray-600'>
-        <div className='flex flex-col font-medium gap-1'><span>Transaction ID</span><span className='font-normal text-sm text-gray-400'> {transactionId}</span></div>
+        <div className='flex flex-col font-medium gap-[2px]'><span>Transaction ID</span><span className='font-normal text-sm text-gray-400'> {transactionId}</span></div>
         <div className='flex flex-col items-center'>
           {/* Display date range */}
           <span className='font-medium'>
