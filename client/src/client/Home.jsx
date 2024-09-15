@@ -32,7 +32,7 @@ const Home = () => {
       </div>
 
       {/* Payment Cards */}
-      <div className='w-full flex flex-col px-5 py-3'>
+      <div className='w-full flex flex-col px-5 pt-3'>
         {item && item.length > 0 ? item.map((payment, index) => (
           <PaymentCard
             key={index}

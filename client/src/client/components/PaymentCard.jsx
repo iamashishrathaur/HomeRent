@@ -14,7 +14,7 @@ const PaymentCard = ({ rentType, date, endDate, amount, transactionId, isPaid, p
   return (
     <div
       onClick={handleCardClick}
-      className={`w-full bg-white flex flex-col shadow-md rounded-lg p-4 my-2 relative border transition-all hover:shadow-lg hover:scale-[1.01] cursor-pointer ${
+      className={`w-full bg-white flex flex-col shadow-md rounded-lg p-4 my-1 relative border transition-all hover:shadow-lg hover:scale-[1.01] cursor-pointer ${
         isExpanded ? 'min-h-16' : 'min-h-10'
       }`}
     >

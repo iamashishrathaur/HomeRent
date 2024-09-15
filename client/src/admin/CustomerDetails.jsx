@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { IoIosArrowBack } from 'react-icons/io';
 import { MdAssignmentAdd } from 'react-icons/md';
 import { SiAdblock } from 'react-icons/si';
 import { useNavigate } from 'react-router-dom';
 import DetailCard from './components/DetailCard';
+import AddRent from './components/AddRent'; // Import AddRent component
 
 const CustomerDetails = () => {
   const navigate = useNavigate();
+  const [showAddRentModal, setShowAddRentModal] = useState(false); // State to control AddRent modal
+
+  // Function to handle closing the AddRent modal
+  const handleCloseModal = () => {
+    setShowAddRentModal(false);
+  };
 
   return (
     <div className='w-full min-h-screen bg-gray-100'>
@@ -41,12 +48,17 @@ const CustomerDetails = () => {
         </button>
         <button
           className='bg-[#9B224B] hover:bg-[#be285a] text-white px-5 py-3 rounded-full text-sm font-medium flex gap-2 items-center transition duration-200'
-          onClick={() => {}}
+          onClick={() => setShowAddRentModal(true)} // Show the AddRent modal when clicked
         >
           <MdAssignmentAdd size={20} />
           Add Rent
         </button>
       </div>
+
+      {/* Add Rent Modal */}
+      {showAddRentModal && (
+        <AddRent show={showAddRentModal} onClose={handleCloseModal} />
+      )}
     </div>
   );
 };
